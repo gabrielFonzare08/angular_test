@@ -1,0 +1,28 @@
+.container {
+    margin-top: 30px;
+}
+
+.add-dev {
+    margin-bottom: 30px;
+}
+
+.list-dev {
+    margin-bottom: 50px;
+}
+
+.btn-add-dev {
+    margin-right: 10px;
+}
+
+.card-header{
+    color :rgb(84, 138, 201);
+}
+
+.lbltabela{
+    text-decoration: underline rgb(0, 0, 0);
+}
+
+td a {
+    display:block;
+    width:100%;
+}
