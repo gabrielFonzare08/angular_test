@@ -24,35 +24,11 @@ export class AppComponent implements OnInit {
 
   createDeveloper(form: NgForm) {
     if (this.dev.id !== undefined) {
-
-      if(this.dev.name == ""){
-        this.devService.statusError("error_name");
-        this.dev = {} as Developer;
-        return;
-      }
-
-      if(this.dev.avatar == ""){
-        this.devService.statusError("error_avatar");
-        this.dev = {} as Developer;
-        return;
-      }
-
       this.devService.updateDeveloper(this.dev).subscribe(() => {
+        alert("Desenvolvedor atualizado com sucesso!")
         this.cleanForm(form);
       });
     } else {
-
-      if(this.dev.name == ""){
-        this.devService.statusError("error_name");
-        this.dev = {} as Developer;
-        return;
-      }
-
-      if(this.dev.avatar == ""){
-        this.devService.statusError("error_avatar");
-        this.dev = {} as Developer;
-        return;
-      }
 
       let hoje = new Date();
       let dia = hoje.getDate();
@@ -65,10 +41,12 @@ export class AppComponent implements OnInit {
       let current_date = ano + "-" + mes + "-" + dia + "T" + horas + ":" + minutos + ":" + segundos + "." + mseg + "Z"
 
       this.dev.createdAt = current_date;
+      
 
-      this.devService.createDeveloper(this.dev).subscribe(() => {
+      this.devService.createDeveloper(this.dev).subscribe(() => { 
+        alert("Desenvolvedor inserido com sucesso!")
         this.cleanForm(form);
-      });
+     });
     }
   }
 
@@ -80,12 +58,8 @@ export class AppComponent implements OnInit {
 
   
   deleteDeveloper(developer: Developer) {
-    if (developer.id !== undefined) {
-        this.devService.statusError("error_delete");
-        return;
-    }
-
     this.devService.deleteDeveloper(developer).subscribe(() => {
+      alert("Desenvolvedor excluido com sucesso!")
       this.getDevelopers();
     });
   }

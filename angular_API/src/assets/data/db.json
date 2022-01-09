@@ -1,18 +1,6 @@
 {
   "developers": [
     {
-      "createdAt": "2022-01-04T16:45:14.247Z",
-      "name": "Mrs. Charlene Dibber",
-      "avatar": "https://cdn.fakercloud.com/avatars/jitachi_128.jpg",
-      "id": "3"
-    },
-    {
-      "createdAt": "2022-01-04T13:15:45.286Z",
-      "name": "Dianne Larkin",
-      "avatar": "https://cdn.fakercloud.com/avatars/rez___a_128.jpg",
-      "id": "4"
-    },
-    {
       "createdAt": "2022-01-04T14:38:04.703Z",
       "name": "Jamie Stamm",
       "avatar": "https://cdn.fakercloud.com/avatars/nastya_mane_128.jpg",
@@ -263,6 +251,12 @@
       "name": "Teste Gobuyer",
       "avatar": "https://gobuyer.com.br/sso/assets/images/logos/logo-gobuyer.png",
       "id": "46"
+    },
+    {
+      "name": "Casa",
+      "avatar": "dsadasdasdsa",
+      "createdAt": "2022-1-9T20:13:47.388Z",
+      "id": "hZbHZdx"
     }
   ]
 }

@@ -28,7 +28,7 @@ export class DeveloperService {
   }
 
   createDeveloper(dev: Developer): Observable<Developer>{
-      return this.httpClient.post<Developer>(this.url, JSON.stringify(dev),this.httpOptions)
+      return this.httpClient.post<Developer>(this.url, dev ,this.httpOptions)
       .pipe(retry(2),catchError(this.handleError))
   }
 
@@ -52,24 +52,6 @@ export class DeveloperService {
     } else {
       errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
     }
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  };
-
-  statusError(tipo : string){
-    let errorMessage = '';
-    if (tipo == "error_name"){
-      errorMessage = "Erro ao inserir/alterar , o campo NOME não pode estar vazio!";
-    }
-
-    if(tipo == "error_avatar"){
-      errorMessage = "Erro ao inserir/alterar , o campo AVATAR não pode estar vazio!";
-    }
-
-    if(tipo == "error_delete"){
-      errorMessage= "Erro ao deletar , o desenvolvedor não existente no banco de dados.";
-    }
-
     console.log(errorMessage);
     return throwError(errorMessage);
   };
