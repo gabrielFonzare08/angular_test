@@ -41,6 +41,8 @@ export class AppComponent implements OnInit {
       let current_date = ano + "-" + mes + "-" + dia + "T" + horas + ":" + minutos + ":" + segundos + "." + mseg + "Z"
 
       this.dev.createdAt = current_date;
+      let idDev = this.developers[this.developers.length - 1].id;
+      this.dev.id = parseInt(idDev.toString()) + parseInt("1");
       
 
       this.devService.createDeveloper(this.dev).subscribe(() => { 
@@ -48,6 +50,7 @@ export class AppComponent implements OnInit {
         this.cleanForm(form);
      });
     }
+    
   }
 
   getDevelopers() {
